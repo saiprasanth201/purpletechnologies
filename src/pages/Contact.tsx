@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Send, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { SiYoutube } from 'react-icons/si';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+
+// ✅ Initialize Supabase client
+export const supabase: SupabaseClient = createClient(
+  import.meta.env.VITE_SUPABASE_URL!,
+  import.meta.env.VITE_SUPABASE_ANON_KEY!
+);
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,16 +17,31 @@ const Contact = () => {
     message: ''
   });
 
-  const handleInputChange = (e: { target: { name: unknown; value: unknown; }; }) => {
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name as string]: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setSuccess('');
+    setError('');
+
+    const { name, email, message } = formData;
+    const { error } = await supabase.from('contacts').insert([{ name, email, message }]);
+
+    if (error) {
+      setError('❌ Something went wrong. Please try again.');
+      console.error(error.message);
+    } else {
+      setSuccess('✅ Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    }
   };
 
   const contactInfo = [
@@ -41,7 +63,7 @@ const Contact = () => {
       icon: MapPin,
       title: 'Address',
       value: 'Mullapudi Venkateswara Rao St, Labbipet, Vijayawada, AP 520010',
-      link: 'https://www.google.com/maps/place/Purple+Technologies/@16.5012862,80.6387101,19.26z/data=!4m15!1m8!3m7!1s0x3a35eff9482d944b:0x939b7e84ab4a0265!2sVijayawada,+Andhra+Pradesh!3b1!8m2!3d16.5061743!4d80.6480153!16zL20vMDM4NWs3!3m5!1s0x3a35faaf6003112d:0xb876e5b253c85713!8m2!3d16.5014281!4d80.6395267!16s%2Fg%2F11b7y76rvv?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D',
+      link: 'https://www.google.com/maps/place/Purple+Technologies/@16.5012862,80.6387101,19.26z/data=!4m15!...',
       color: 'from-purple-400 to-pink-500'
     },
     {
@@ -73,6 +95,7 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Contact Info Section */}
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <h2 className="text-3xl font-bold text-white mb-8">Get in Touch</h2>
             <div className="space-y-6 mb-12">
@@ -110,6 +133,7 @@ const Contact = () => {
             </motion.div>
           </motion.div>
 
+          {/* Contact Form Section */}
           <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
             <h2 className="text-3xl font-bold text-white mb-8">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -120,6 +144,8 @@ const Contact = () => {
                 <Send className="h-5 w-5" />
                 <span>Send Message</span>
               </button>
+              {success && <p className="text-green-400 text-sm text-center mt-2">{success}</p>}
+              {error && <p className="text-red-400 text-sm text-center mt-2">{error}</p>}
             </form>
             <p className="text-gray-400 text-sm text-center mt-6">We'll get back to you within 24 hours!</p>
           </motion.div>

@@ -106,6 +106,8 @@ const Home = () => {
         </div>
       </AnimatedSection>
 
+
+
       {/* Why Choose Us */}
       <AnimatedSection className="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,17 +184,39 @@ const Home = () => {
         </div>
       </AnimatedSection>
 
-      {/* CTA */}
-      <AnimatedSection className="py-20 bg-gradient-to-r from-purple-900/20 via-gray-900 to-cyan-900/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Want to learn more?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Explore our full range of services and discover how we can help bring your IoT vision to life.
-          </p>
-        </div>
-      </AnimatedSection>
+      {/* Explore Our Focus Areas Section */}
+<section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 text-white text-center">
+  <div className="max-w-5xl mx-auto px-4">
+    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+      Explore Our Focus Areas
+    </h2>
+    <p className="text-lg md:text-xl mb-10 text-gray-200">
+      Dive into cutting-edge domains driving the future of technology and innovation.
+    </p>
+
+    <div className="flex flex-wrap justify-center gap-4">
+      {[
+        'The Future of IoT in Smart Cities',
+        'AWS & DevOps',
+        'AI/ML',
+        'ROBOTICS',
+        'EMBEDDED SYSTEMS',
+        'FULLSTACK',
+        'JAVA',
+      ].map((area, idx) => (
+        <span
+          key={idx}
+          className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300 text-sm md:text-base"
+        >
+          {area}
+        </span>
+      ))}
+    </div>
+
+    
+  </div>
+</section>
+
     </div>
   );
 };

@@ -28,7 +28,9 @@ const BlogDetails = () => {
       </div>
 
       {/* Title */}
-      <h1 className="text-5xl font-bold mb-6">{post.title}</h1>
+      <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
+        {post.title}
+      </h1>
 
       {/* Meta Info */}
       <div className="flex items-center text-base text-white/80 mb-8 gap-4 flex-wrap">
@@ -47,60 +49,56 @@ const BlogDetails = () => {
         <span>• {post.readTime}</span>
       </div>
 
-      {/* Content */}
-      <div className="space-y-6 text-xl leading-relaxed text-white">
-        <div className="space-y-6 text-xl leading-relaxed text-white">
-  {post.id === 2 && (
-    <>
-      <p className="text-2xl font-bold text-purple-300">• What We Offer:</p>
-      <p>Cloud Infrastructure Design: Build secure and scalable AWS cloud solutions.</p>
-      <p>CI/CD Pipelines: Automate code testing and deployment with tools like Jenkins, GitHub Actions, and AWS CodePipeline.</p>
-      <p>Containerization & Orchestration: Docker + Kubernetes (EKS) setup for efficient microservice deployment.</p>
-      <p>Monitoring & Logging: Set up CloudWatch, ELK, and Grafana for real-time monitoring and alerting.</p>
-      <p>Infrastructure as Code (IaC): Using Terraform and AWS CloudFormation for repeatable infrastructure deployment.</p>
+      {/* Main Content - Glass Box */}
+      <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-8 py-10 space-y-8 shadow-lg">
+        {post.id === 2 && (
+          <>
+            <Section title="• What We Offer:" color="from-purple-300 to-indigo-400" />
+            <p>✅ Cloud Infrastructure Design: Build secure and scalable AWS cloud solutions.</p>
+            <p>✅ CI/CD Pipelines: Automate with Jenkins, GitHub Actions, AWS CodePipeline.</p>
+            <p>✅ Containerization & Orchestration: Docker + Kubernetes (EKS) setup.</p>
+            <p>✅ Monitoring & Logging: CloudWatch, ELK, and Grafana for alerts.</p>
+            <p>✅ Infrastructure as Code (IaC): Terraform and AWS CloudFormation.</p>
 
-      <p className="text-2xl font-bold text-purple-300">• Business Benefits:</p>
-      <p>Faster Time-to-Market, Improved System Reliability, Reduced Downtime, Optimized Cloud Costs.</p>
-      <p>Purple Technologies is your trusted partner in automating, scaling, and transforming your cloud journey using AWS and DevOps best practices.</p>
+            <Section title="• Business Benefits:" color="from-pink-400 to-purple-500" />
+            <p>🚀 Faster Time-to-Market, ☁️ Improved System Reliability, 💸 Optimized Costs.</p>
+            <p>Purple Technologies is your trusted partner in cloud automation and scaling.</p>
 
-      <p className="text-2xl font-bold text-purple-300">• Azure & DevOps Solutions at Purple Technologies:</p>
-      <p>As organizations shift toward Microsoft-based ecosystems, Azure & DevOps has emerged as a go-to solution for cloud transformation...</p>
-      
-      {/* The rest of your AWS content */}
-    </>
-  )}
+            <Section title="• Azure & DevOps Solutions at Purple Technologies:" color="from-blue-300 to-sky-400" />
+            <p>Microsoft-based Azure & DevOps solutions for cloud transformation success...</p>
+          </>
+        )}
 
-  {post.id === 3 && (
-    <>
-      <p className="text-2xl font-bold text-purple-300">• What We Offer:</p>
-      <p>Custom AI/ML Model Development: Build predictive, classification, and generative models tailored to your business needs.</p>
-      <p>Data Engineering & Preprocessing: Clean, transform, and pipeline data from multiple sources for accurate modeling.</p>
-      <p>Model Deployment: Serve models at scale using tools like Flask, FastAPI, TensorFlow Serving, or AWS SageMaker.</p>
-      <p>Computer Vision & NLP: OCR, facial recognition, sentiment analysis, and chatbots powered by the latest AI frameworks.</p>
-      <p>MLOps & Model Monitoring: Track drift, retrain models, and automate deployments using MLflow, DVC, and Kubeflow.</p>
+        {post.id === 3 && (
+          <>
+            <Section title="• What We Offer:" color="from-purple-300 to-indigo-400" />
+            <p>🤖 Custom AI/ML Model Development: Predictive, classification, generative.</p>
+            <p>📊 Data Engineering: Pipeline data from multiple sources for modeling.</p>
+            <p>🚀 Model Deployment: Flask, FastAPI, TensorFlow Serving, AWS SageMaker.</p>
+            <p>🧠 Computer Vision & NLP: OCR, facial recognition, sentiment, chatbots.</p>
+            <p>🛠️ MLOps: MLflow, DVC, Kubeflow for automation and monitoring.</p>
 
-      <p className="text-2xl font-bold text-purple-300">• Business Benefits:</p>
-      <p>Smarter Decision Making, Predictive Insights, Process Automation, and Competitive Edge through AI.</p>
-      <p>Purple Technologies empowers businesses with end-to-end AI/ML solutions that deliver measurable impact and real-world results.</p>
+            <Section title="• Business Benefits:" color="from-pink-400 to-purple-500" />
+            <p>📈 Predictive Insights, 🤖 Smarter Automation, ⚡ Real-world Impact.</p>
 
-      <p className="text-2xl font-bold text-purple-300">• Use Cases:</p>
-      <p>• Customer Churn Prediction</p>
-      <p>• Demand Forecasting</p>
-      <p>• Fraud Detection</p>
-      <p>• Sentiment Analysis</p>
-      <p>• Recommendation Engines</p>
+            <Section title="• Use Cases:" color="from-green-300 to-emerald-400" />
+            <ul className="list-disc list-inside space-y-1 pl-4">
+              <li>Customer Churn Prediction</li>
+              <li>Demand Forecasting</li>
+              <li>Fraud Detection</li>
+              <li>Sentiment Analysis</li>
+              <li>Recommendation Engines</li>
+            </ul>
 
-      <p className="text-2xl font-bold text-purple-300">• Why Purple Technologies?</p>
-      <ul className="list-disc list-inside pl-5 space-y-1">
-        <li>Experienced AI/ML Engineers</li>
-        <li>End-to-End Project Ownership</li>
-        <li>Fast Prototyping to Scalable Deployment</li>
-        <li>Domain-Specific Customization</li>
-      </ul>
-    </>
-  )}
-</div>
-
+            <Section title="• Why Purple Technologies?" color="from-yellow-300 to-orange-400" />
+            <ul className="list-disc list-inside pl-4 space-y-1">
+              <li>✔️ Experienced AI/ML Engineers</li>
+              <li>✔️ End-to-End Project Ownership</li>
+              <li>✔️ Fast Prototyping to Deployment</li>
+              <li>✔️ Domain-Specific Solutions</li>
+            </ul>
+          </>
+        )}
       </div>
 
       {/* Tags */}
@@ -130,5 +128,20 @@ const BlogDetails = () => {
     </div>
   );
 };
+
+// Reusable gradient section header
+const Section = ({
+  title,
+  color,
+}: {
+  title: string;
+  color: string;
+}) => (
+  <h2
+    className={`text-2xl font-bold bg-gradient-to-r ${color} text-transparent bg-clip-text mb-2`}
+  >
+    {title}
+  </h2>
+);
 
 export default BlogDetails;

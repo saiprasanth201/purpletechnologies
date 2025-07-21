@@ -1,11 +1,12 @@
+// src/components/AnimatedSection.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 
 interface AnimatedSectionProps {
   className?: string;
   children: React.ReactNode;
-  animation?: string; 
-  delay?: number;
+  animation?: string; // This prop is not currently used but can remain for future expansion
+  delay?: number;     // This prop is not currently used but can remain for future expansion
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ className, children }) => {
@@ -22,6 +23,4 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ className, children }
   );
 };
 
-
 export default AnimatedSection;
-

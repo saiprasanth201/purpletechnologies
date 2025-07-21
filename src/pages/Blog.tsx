@@ -267,34 +267,7 @@ const Blog = () => {
         </AnimatedSection>
 
         {/* Newsletter Signup */}
-        <AnimatedSection className="mt-20">
-          <div className="text-center">
-            <div className="relative p-12 bg-gradient-to-r from-purple-900/20 via-gray-900/50 to-cyan-900/20 rounded-3xl border border-purple-500/30">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-cyan-600/10 rounded-3xl blur-3xl"></div>
-              
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-                  Stay Updated
-                </h2>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Subscribe to our newsletter for the latest IoT insights, tutorials, and industry updates delivered to your inbox.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors duration-300"
-                  />
-                  <button className="group relative px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
-                    <span className="relative z-10">Subscribe</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
+        
       </div>
     </div>
   );

@@ -98,15 +98,15 @@ const About = () => {
 
   },
    {
-     name: 'P SUDHKAR',
-      role: 'Business Development Manager',
+     name: 'KHADAR BABA SHAIK',
+      role: 'Cloud Developer',
       description: 'Cloud infrastructure and DevOps automation expert',
       gradient: 'from-yellow-400 to-orange-500'
 
   },
    {
-     name: 'BHAVANA',
-      role: 'IOT Developer',
+     name: 'P SUDHKAR',
+      role: 'Business Development Manager',
       description: 'Cloud infrastructure and DevOps automation expert',
       gradient: 'from-yellow-400 to-orange-500'
 
@@ -115,38 +115,37 @@ const About = () => {
 ];
 const publiclogos = [
 
-  "public/srmap.png",
-  "public/Ramachandra.png",
-  "public/VignansLara.png",
-  "public/srivasavi.png",
-  "public/vignans.png",
-   "public/vitap-removebg-preview.png",
-  "public/vignansNirula.png",
-  "public/vishnu.png",
-  "public/prodigy.png",
-  "public/eswar.png",
-  "public/Gomathi.png",
-  "public/IMAGE SIMS.png"
+  "/srmap.png",
+  "/Ramachandra.png",
+  "/VignansLara.png",
+  "/srivasavi.png",
+  "/vignans.png",
+  "/vitap-removebg-preview.png",
+  "/vignansNirula.png",
+  "/vishnu.png",
+  "/prodigy.png",
+  "/eswar.png",
+  "/Gomathi.png",
+  "/IMAGE SIMS.png"
 ];
 
 const publiclogos1 = [
 
-  "public/pictor.png",
-  "public/minemagma.png",
-  "public/sarman.png",
-  "public/infotech.png",
-  
-   
+  "/pictor.png",
+  "/minemagma.png",
+  "/sarman.png",
+  "/infotech.png",
+
 ];
 
 const publiclogos2 = [
 
-  "public/MICROSOFT.png",
-  "public/ACEBOT.png",
-  "public/WEMAKE.png",
-  "public/image-removebg-preview (6).png",
-  "public/aws2.png",
-   
+  "/MICROSOFT.png",
+  "/ACEBOT.png",
+  "/WEMAKE.png",
+  "/image-removebg-preview (6).png",
+  "/aws2.png",
+
   
 ];
 

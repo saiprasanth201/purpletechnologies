@@ -147,35 +147,6 @@ const Shop = () => {
           </div>
         </motion.div>
 
-        {/* Newsletter */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 text-center"
-        >
-          <h2 className="text-3xl font-bold text-white mb-4">Stay Updated!</h2>
-          <p className="text-lg text-gray-300 mb-6">Sign up for our newsletter to receive updates on new arrivals, exclusive discounts, and special offers directly to your inbox.</p>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-          >
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 transition-all duration-300"
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              Subscribe
-            </motion.button>
-          </motion.div>
-        </motion.div>
 
         {/* Final CTA with contact */}
         <motion.div

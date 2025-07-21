@@ -49,14 +49,14 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-4 group">
             <div className="relative w-14 h-14">
               <img
-                src="https://purpletechnosolutions.com/content/raw/img/logo.png"
+                src="logo.png"
                 alt="Logo"
                 className="w-full h-full object-contain rounded-lg shadow-md"
               />
               <div className="absolute inset-0 bg-purple-400 blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300 rounded-lg" />
             </div>
             <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent whitespace-nowrap">
-              Purple Techno Solutions
+              Purple Technologies
             </span>
           </Link>
 
@@ -81,7 +81,7 @@ const Navbar = () => {
                   </Link>
 
                   {/* Dropdown - only shown on hover of parent */}
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-slate-800 border border-white/10 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  {/* <div className="absolute top-full left-0 mt-2 w-64 bg-slate-800 border border-white/10 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                     {productLinks.map((product) => (
                       <button
                         key={product.category}
@@ -91,7 +91,7 @@ const Navbar = () => {
                         {product.name}
                       </button>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               ) : (
                 <Link
